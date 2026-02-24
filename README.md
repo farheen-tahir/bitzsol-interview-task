@@ -95,3 +95,44 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+# TodoListApp (React Native CLI + TypeScript)
+
+## Setup
+
+1. Install dependencies:
+
+- yarn or npm install
+
+2. iOS pods:
+
+- cd ios && pod install && cd ..
+
+3. Run:
+
+- yarn android or npx react-native run-android
+- yarn ios or npx react-native run-ios
+
+## Features Implemented
+
+- Fetch todos from API (limit=10)
+- Loading + error states
+- Display list using FlatList
+- Toggle completion (local)
+- Add todo with validation
+- Delete todo
+- Bonus:
+  - Persist todos with AsyncStorage
+  - Pull-to-refresh
+  - Filter tabs (All / Pending / Completed)
+
+## Assumptions
+
+- API is read-only; updates are local only.
+- Local todos use negative IDs to avoid collisions with API IDs.
+- Cached data is used first; pull-to-refresh fetches fresh API todos.
+
+## Notes
+
+- No Redux or heavy state management.
+- Uses custom hook `useTodos()` for clean state handling.
